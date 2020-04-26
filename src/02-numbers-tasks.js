@@ -52,15 +52,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  // let num = 0;
-  // if ((value1 + value2) / 2) {
-  //   num = (value2 + value1) / 2;
-  // // eslint-disable-next-line no-restricted-globals
-  // } else if (isFinite((value1 + value2) / 2)) {
-  //   num = Infinity;
-
-  // }
-  // return num;
+  return 0.5 * value1 + 0.5 * value2;
 }
 
 /**
@@ -197,7 +189,7 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return Math.ceil((num) * 100) / 100;
+  return Math.round(num / (10 ** pow)) * 10 ** pow;
 }
 
 /**
@@ -239,8 +231,8 @@ function isPrime(num) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-
+function toNumber(value, def) {
+  return Number(value) ? Number(value) : def;
 }
 
 module.exports = {
